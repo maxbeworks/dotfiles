@@ -1,0 +1,12 @@
+theme = catppuccin-mocha
+mouse-hide-while-typing = true
+#macos-option-as-alt = true
+background-opacity = 0.8
+background-blur-radius = 20
+font-family = "Fira Code Regular"
+font-size = 14
+
+# New changes
+cursor-opacity = 0.5
+copy-on-select = false
+

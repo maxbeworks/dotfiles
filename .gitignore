@@ -1,0 +1,11 @@
+# System files
+.DS_Store
+*~
+*.swp
+*.swo
+
+# LazyVim/neovim generated files
+nvim/.config/nvim/lazy-lock.json
+
+**/*.local
+**/*.local.zsh
