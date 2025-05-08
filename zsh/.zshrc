@@ -7,7 +7,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # »»————-　★　CONFIG STUFFS ————-««
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export BAT_THEME="catppuccin_mocha"
+export BAT_THEME="everforest-soft"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 export EDITOR="nvim"
 HISTFILE=~/.zsh_history
@@ -35,12 +35,12 @@ eval "$(fzf --zsh)"
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git --exclude node_modules --exclude venv --exclude .venv --exclude __pycache__ --exclude build --exclude dist --exclude .cache --exclude cache --exclude Caches --exclude Cache"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
---color=selected-bg:#45475a \
---multi"
+export FZF_DEFAULT_OPTS="
+	--color=fg:#859289,hl:#e67e80
+	--color=fg+:#d3c6aa,bg+:#343f44,hl+:#e67e80
+	--color=border:#475258,header:#83c092,gutter:#2d353b
+	--color=spinner:#dbbc7f,info:#7fbbb3
+	--color=pointer:#d699b6,marker:#e67e80,prompt:#859289"
 
 _fzf_compgen_path() {
   fd --hidden --exclude .git . "$1"
@@ -56,6 +56,7 @@ source ~/.config/fzf-git.sh/fzf-git.sh
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_CTRL_R_OPTS="--layout=reverse"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 _fzf_comprun() {
