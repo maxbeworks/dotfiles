@@ -76,8 +76,6 @@ run = 'move-node-to-workspace 5 --focus-follows-window'
 if.app-name-regex-substring = 'music'
 run = 'move-node-to-workspace 6 --focus-follows-window'
 
-
-
 [gaps]
 inner.horizontal = 10
 inner.vertical = 10
