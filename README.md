@@ -16,7 +16,7 @@ Theme: catppuccin mocha. It integrates well everywhere, on top of having nice co
 ## Dev workflow
 
 - **Terminal:** [Ghostty](https://github.com/ghostty-org/ghostty)
-- Editor: Neovim with [Lazyvim](https://github.com/LazyVim/LazyVim)
+- **Editor:** Neovim with [Lazyvim](https://github.com/LazyVim/LazyVim)
 - **Shell:** [zsh](https://www.zsh.org/)
 - **Browser:** [Arc](https://arc.net/)/[Ladybird](https://ladybird.org/)
 - **Notes:** [Obsidian](https://obsidian.md/)
@@ -30,6 +30,11 @@ Theme: catppuccin mocha. It integrates well everywhere, on top of having nice co
 - **cat alternative:** [bat](https://github.com/sharkdp/bat)
 - **files management:** [yazi](https://github.com/sxyazi/yazi)
 - **prompt:** [starship](https://github.com/starship/starship)
+- **fast cd:** [zoxide]()
+- **fuzzy stuffs:** [fzf]()
+- **git:** [lazygit]() [lazydocker]()
+- **docker:** [lazydocker]()
+- **AI:** [@2501]()
 
 ## Stow to install
 
