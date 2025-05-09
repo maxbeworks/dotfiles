@@ -8,9 +8,9 @@ Theme: catppuccin mocha. It integrates well everywhere, on top of having nice co
 
 [See catppuccin integrations](https://catppuccin.com/).
 
-![showcase-main](img/showcase/main)
+![showcase-main](img/showcase/main.png)
 
-![showcase-terminal](img/showcase/terminal)
+![showcase-terminal](img/showcase/terminal.png)
 
 ## Dev workflow
 
