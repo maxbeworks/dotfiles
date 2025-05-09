@@ -48,14 +48,35 @@ run = 'layout floating'
 if.app-name-regex-substring = 'settings'
 run = 'layout floating'
 
-# Old gaps, if not working with sketchybar
-# [gaps]
-#     inner.horizontal = 7
-#     inner.vertical =   7
-#     outer.left =       7
-#     outer.bottom =     7
-#     outer.top =        7
-#     outer.right =      7
+[[on-window-detected]]
+if.app-name-regex-substring = 'arc'
+run = 'move-node-to-workspace 1 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'ghostty'
+run = 'move-node-to-workspace 2 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'claude'
+run = 'move-node-to-workspace 3 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'slack'
+run = 'move-node-to-workspace 4 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'discord'
+run = 'move-node-to-workspace 4 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'obsidian'
+run = 'move-node-to-workspace 5 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'music'
+run = 'move-node-to-workspace 6 --focus-follows-window'
+
+
 
 [gaps]
 inner.horizontal = 10
@@ -90,16 +111,27 @@ alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
 
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
 alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
 alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
 alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-semicolon = 'mode service'
+
+alt-b = 'exec-and-forget open -a /Applications/Arc.app'
+alt-n = 'exec-and-forget open -a /Applications/Obsidian.app'
+alt-t = 'exec-and-forget open -a /Applications/Ghostty.app'
+alt-c = 'exec-and-forget open -a /Applications/Claude.app'
+alt-m = 'exec-and-forget open -a /System/Applications/Music.app'
+alt-s = 'exec-and-forget open -a /Applications/Slack.app'
+alt-d = 'exec-and-forget open -a /Applications/Discord.app'
+
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
