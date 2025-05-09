@@ -1,7 +1,7 @@
 local icons = require("icons")
 local colors = require("colors").sections.media
 
-local whitelist = { ["Spotify"] = true, ["Psst"] = true, }
+local whitelist = { ["Spotify"] = true, ["Psst"] = true, ["Music"] = true, }
 
 local media_playback = sbar.add("item", {
   position = "right",

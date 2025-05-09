@@ -2,10 +2,10 @@ local colors = require("colors").sections.bar
 
 sbar.bar {
   topmost = "window",
-  height = 42,
-  notch_display_height = 42,
-  padding_right = 12,
-  padding_left = 12,
+  height = 44,
+  notch_display_height = 44,
+  padding_right = 4,
+  padding_left = 4,
   margin = 10,
   corner_radius = 10,
   y_offset = 5,

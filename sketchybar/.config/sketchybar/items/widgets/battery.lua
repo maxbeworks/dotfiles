@@ -7,7 +7,7 @@ local battery = sbar.add("item", "widgets.battery", {
   label = { drawing = false },
   background = { drawing = false },
   padding_left = 8,
-  padding_right = 4,
+  padding_right = 0,
   update_freq = 180,
   popup = { align = "center", y_offset = 4 },
 })

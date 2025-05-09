@@ -3,18 +3,18 @@ start-at-login = true
 after-login-command = []
 
 after-startup-command = [
-  # 'exec-and-forget sketchybar',
+  'exec-and-forget sketchybar',
   'exec-and-forget borders',
 ]
-# exec-on-workspace-change = [
-#   '/bin/bash',
-#   '-c',
-#   '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-# ]
-#
-# on-focus-changed = [
-#   'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_focus_change',
-# ]
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+]
+
+on-focus-changed = [
+  'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_focus_change',
+]
 
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true

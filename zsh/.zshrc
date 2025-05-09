@@ -7,7 +7,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # »»————-　★　CONFIG STUFFS ————-««
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export BAT_THEME="everforest-soft"
+export BAT_THEME="catppuccin-mocha"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 export EDITOR="nvim"
 HISTFILE=~/.zsh_history
@@ -36,11 +36,11 @@ export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git --excl
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_OPTS="
-	--color=fg:#859289,hl:#e67e80
-	--color=fg+:#d3c6aa,bg+:#343f44,hl+:#e67e80
-	--color=border:#475258,header:#83c092,gutter:#2d353b
-	--color=spinner:#dbbc7f,info:#7fbbb3
-	--color=pointer:#d699b6,marker:#e67e80,prompt:#859289"
+	--color=fg:#cdd6f4,hl:#f38ba8
+	--color=fg+:#f5e0dc,bg+:#313244,hl+:#f38ba8
+	--color=border:#45475a,header:#a6e3a1,gutter:#181825
+	--color=spinner:#f9e2af,info:#89b4fa
+	--color=pointer:#cba6f7,marker:#f38ba8,prompt:#a6e3a1"
 
 _fzf_compgen_path() {
   fd --hidden --exclude .git . "$1"

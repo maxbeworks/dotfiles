@@ -75,6 +75,9 @@ M.sections = {
       mid = catppuccin.yellow,
       high = catppuccin.green,
     },
+    cpu = {
+      icon = catppuccin.text,
+    },
     wifi = {
       icon = catppuccin.text,
     },
