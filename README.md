@@ -4,9 +4,10 @@ Stitching together stuffs I found on the internet and modified to fit my needs.
 
 ## Looks
 
+Font: mostly Fira Code & SF Pro (Nerd Fonts).  
 Theme: catppuccin mocha. It integrates well everywhere, on top of having nice colors.
 
-[See catppuccin integrations](https://catppuccin.com/).
+[See catppuccin integrations](https://catppuccin.com/).  
 
 ![showcase-main](img/showcase/main.png)
 
