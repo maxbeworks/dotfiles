@@ -4,96 +4,94 @@ local with_alpha = function(color, alpha)
   if alpha > 1.0 or alpha < 0.0 then
     return color
   end
-  return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
+  return (color & 0x00FFFFFF) | (math.floor(alpha * 255.0) << 24)
 end
 
 local transparent = 0x00000000
 
-local rp_moon = {
-  base = 0xff232136,
-  surface = 0xff2a273f,
-  overlay = 0xff393552,
-  muted = 0xff6e6a86,
-  subtle = 0xff908caa,
-  text = 0xffe0def4,
-  love = 0xffeb6f92,
-  gold = 0xfff6c177,
-  rose = 0xffea9a97,
-  iris = 0xffc4a7e7,
-  pine = 0xff3e8fb0,
-  foam = 0xff9ccfd8,
-  highlight_low = 0xff21202e,
-  highlight_med = 0xff44415a,
+local catppuccin = {
+  rosewater = 0xFFF5E0DC,
+  flamingo = 0xFFF2CDCD,
+  pink = 0xFFF5C2E7,
+  mauve = 0xFFCBA6F7,
+  red = 0xFFF38BA8,
+  maroon = 0xFFEBA0AC,
+  peach = 0xFFFAB387,
+  yellow = 0xFFF9E2AF,
+  green = 0xFFA6E3A1,
+  teal = 0xFF94E2D5,
+  sky = 0xFF89DCEB,
+  sapphire = 0xFF74C7EC,
+  blue = 0xFF89B4FA,
+  lavender = 0xFFB4BEFE,
+  text = 0xFFCDD6F4,
+  subtext1 = 0xFFBAC2DE,
+  subtext0 = 0xFFA6ADC8,
+  overlay2 = 0xFF9399B2,
+  overlay1 = 0xFF7F849C,
+  overlay0 = 0xFF6C7086,
+  surface2 = 0xFF585B70,
+  surface1 = 0xFF45475A,
+  surface0 = 0xFF313244,
+  base = 0xFF1E1E2E,
+  mantle = 0xFF181825,
+  crust = 0xFF11111B,
 }
-
-local rp = {
-  base = 0xff191724,
-  surface = 0xff1f1d2e,
-  overlay = 0xff26233a,
-  muted = 0xff6e6a86,
-  subtle = 0xff908caa,
-  text = 0xffe0def4,
-  love = 0xffeb6f92,
-  gold = 0xfff6c177,
-  rose = 0xffebbcba,
-  iris = 0xffc4a7e7,
-  pine = 0xff31748f,
-  foam = 0xff9ccfd8,
-  highlight_low = 0xff21202e,
-  highlight_med = 0xff403d52,
-  highlight_high = 0xff524f67,
-}
-
-local theme = rp
 
 M.sections = {
+  -- Core Components
   bar = {
-    bg = with_alpha(rp_moon.overlay, 0.6),
-    border = theme.highlight_low,
+    bg = with_alpha(catppuccin.base, 0.7),
+    border = catppuccin.crust,
   },
   item = {
-    bg = theme.overlay,
-    border = theme.base,
-    text = theme.text,
+    bg = catppuccin.surface0,
+    border = catppuccin.crust,
+    text = catppuccin.text,
   },
-  apple = theme.text,
+  popup = {
+    bg = with_alpha(catppuccin.base, 0.7),
+    border = catppuccin.crust,
+  },
+
+  -- Items
+  apple = catppuccin.flamingo,
+  media = { label = catppuccin.text },
+  calendar = { label = catppuccin.text },
   spaces = {
     icon = {
-      color = theme.subtle,
-      highlight = theme.text,
+      color = catppuccin.subtext0,
+      highlight = catppuccin.yellow,
     },
     label = {
-      color = theme.subtle,
-      highlight = theme.gold,
+      color = catppuccin.subtext0,
+      highlight = catppuccin.yellow,
     },
-    indicator = theme.iris,
-  },
-  media = {
-    label = theme.subtle,
+    indicator = catppuccin.mauve,
   },
   widgets = {
     battery = {
-      low = theme.love,
-      mid = theme.gold,
-      high = theme.pine,
+      low = catppuccin.red,
+      mid = catppuccin.yellow,
+      high = catppuccin.green,
     },
-    wifi = { icon = theme.rose },
+    wifi = {
+      icon = catppuccin.text,
+    },
     volume = {
-      icon = theme.foam,
+      icon = catppuccin.blue,
       popup = {
-        item = theme.subtle,
-        highlight = theme.text,
+        item = catppuccin.text,
+        highlight = catppuccin.subtext0,
+        bg = with_alpha(catppuccin.base, 0.7),
       },
       slider = {
-        highlight = theme.foam,
-        bg = theme.highlight_med,
-        border = theme.highlight_low,
+        highlight = catppuccin.text,
+        bg = with_alpha(catppuccin.base, 0.7),
+        border = catppuccin.surface0,
       },
     },
-    messages = { icon = theme.love },
-  },
-  calendar = {
-    label = theme.subtle,
+    messages = { icon = catppuccin.flamingo },
   },
 }
 

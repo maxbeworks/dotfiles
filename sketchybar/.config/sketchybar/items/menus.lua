@@ -1,4 +1,4 @@
-local settings = require "settings"
+local settings = require("settings")
 
 local menu_watcher = sbar.add("item", {
   drawing = false,

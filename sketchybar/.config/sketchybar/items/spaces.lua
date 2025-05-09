@@ -1,44 +1,48 @@
 local colors = require("colors").sections.spaces
-local icons = require "icons"
-local icon_map = require "helpers.icon_map"
+local icons = require("icons")
+local icon_map = require("helpers.icon_map")
+
+local function add_windows(space, space_name)
+  sbar.exec("aerospace list-windows --format %{app-name} --workspace " .. space_name, function(windows)
+    local icon_line = ""
+    for app in windows:gmatch "[^\r\n]+" do
+      local lookup = icon_map[app]
+      local icon = ((lookup == nil) and icon_map["Default"] or lookup)
+      icon_line = icon_line .. " " .. icon
+    end
+
+    sbar.animate("tanh", 10, function()
+      space:set {
+        label = {
+          string = icon_line == "" and "—" or icon_line,
+          padding_right = icon_line == "" and 8 or 12,
+        },
+      }
+    end)
+  end)
+end
 
 sbar.exec("aerospace list-workspaces --all", function(spaces)
   for space_name in spaces:gmatch "[^\r\n]+" do
     local space = sbar.add("item", "space." .. space_name, {
       icon = {
-        string = space_name .. " " .. icons.separators.right,
+        string = space_name,
         color = colors.icon.color,
         highlight_color = colors.icon.highlight,
         padding_left = 8,
-        padding_right = 4,
       },
       label = {
         font = "sketchybar-app-font:Regular:14.0",
-        string = "space",
+        string = "",
         color = colors.label.color,
         highlight_color = colors.label.highlight,
         y_offset = -1,
-        padding_right = 12,
       },
       click_script = "aerospace workspace " .. space_name,
       padding_left = space_name == "1" and 0 or 4,
     })
 
-    local function update_windows()
-      sbar.exec("aerospace list-windows --format %{app-name} --workspace " .. space_name, function(windows)
-        local no_app = true
-        local icon_line = ""
-        for app in windows:gmatch "[^\r\n]+" do
-          no_app = false
-          local lookup = icon_map[app]
-          local icon = ((lookup == nil) and icon_map["default"] or lookup)
-          icon_line = icon_line .. " " .. icon
-        end
-        sbar.animate("tanh", 10, function()
-          space:set { label = no_app and " —" or icon_line }
-        end)
-      end)
-    end
+    add_windows(space, space_name)
 
     space:subscribe("aerospace_workspace_change", function(env)
       local selected = env.FOCUSED_WORKSPACE == space_name
@@ -71,15 +75,10 @@ sbar.exec("aerospace list-workspaces --all", function(spaces)
           }
         end)
       end
-      update_windows()
-    end)
-
-    space:subscribe("aerospace_focus_change", function()
-      update_windows()
     end)
 
     space:subscribe("space_windows_change", function()
-      update_windows()
+      add_windows(space, space_name)
     end)
 
     space:subscribe("mouse.clicked", function()
@@ -111,13 +110,15 @@ end)
 
 local spaces_indicator = sbar.add("item", {
   icon = {
-    padding_left = 15,
-    padding_right = 15,
+    padding_left = 8,
+    padding_right = 9,
     string = icons.switch.on,
     color = colors.indicator,
   },
   label = {
-    drawing = false,
+    width = 0,
+    padding_left = 0,
+    padding_right = 8,
   },
   padding_right = 8,
 })
@@ -152,5 +153,6 @@ spaces_indicator:subscribe("mouse.clicked", function()
       padding_right = 8,
     }
   end)
-  sbar.trigger "swap_menus_and_spaces"
+
+  sbar.trigger("swap_menus_and_spaces")
 end)
