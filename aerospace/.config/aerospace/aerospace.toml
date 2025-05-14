@@ -57,10 +57,6 @@ if.app-name-regex-substring = 'ghostty'
 run = 'move-node-to-workspace 2 --focus-follows-window'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'claude'
-run = 'move-node-to-workspace 3 --focus-follows-window'
-
-[[on-window-detected]]
 if.app-name-regex-substring = 'slack'
 run = 'move-node-to-workspace 4 --focus-follows-window'
 
@@ -125,7 +121,6 @@ alt-shift-semicolon = 'mode service'
 alt-b = 'exec-and-forget open -a /Applications/Arc.app'
 alt-n = 'exec-and-forget open -a /Applications/Obsidian.app'
 alt-t = 'exec-and-forget open -a /Applications/Ghostty.app'
-alt-a = 'exec-and-forget open -a /Applications/Claude.app'
 alt-m = 'exec-and-forget open -a /System/Applications/Music.app'
 alt-s = 'exec-and-forget open -a /Applications/Slack.app'
 alt-d = 'exec-and-forget open -a /Applications/Discord.app'
