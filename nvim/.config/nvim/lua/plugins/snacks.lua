@@ -32,11 +32,11 @@ return {
     },
     picker = {
       hidden = true,
-      ignored = true,
+      ignored = false,
       sources = {
         files = {
           hidden = true,
-          ignored = true,
+          ignored = false,
         },
         explorer = {
           auto_close = true,
