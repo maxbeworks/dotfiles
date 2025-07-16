@@ -53,8 +53,17 @@
       }
     },
     "docs": {
-      "model": "ollama/deepseek-r1:8b",
+      "model": "deepseek/deepseek-reasoner",
       "tools": {
+        "webfetch": false,
+        "patch": false
+      }
+    },
+    "commenter": {
+      "model": "deepseek/deepseek-chat",
+      "tools": {
+        "bash": false,
+        "glob": false,
         "webfetch": false
       }
     }
