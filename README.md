@@ -28,11 +28,10 @@ Theme: catppuccin mocha. It integrates well everywhere, on top of having nice co
 - **Terminal sessions:** [tmux](https://github.com/tmux/tmux)
 - **ls alternative:** [eza](https://github.com/eza-community/eza)
 - **cat alternative:** [bat](https://github.com/sharkdp/bat)
-- **files management:** [yazi](https://github.com/sxyazi/yazi)
 - **prompt:** [starship](https://github.com/starship/starship)
 - **fast cd:** [zoxide](https://github.com/ajeetdsouza/zoxide)
 - **fuzzy stuffs:** [fzf](https://github.com/junegunn/fzf)
-- **git:** [lazygit](https://github.com/jesseduffield/lazygit)
+- **git:** [lazygit](https://github.com/jesseduffield/lazygit) (with git-delta)
 - **docker:** [lazydocker](https://github.com/jesseduffield/lazydocker)
 - **AI:** [@2501](https://github.com/2501-ai/cli)
 
