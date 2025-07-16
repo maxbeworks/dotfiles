@@ -6,5 +6,3 @@ alias wut='tldr'
 alias lg="lazygit"
 alias ldo="lazydocker"
 alias x="exit"
-alias c="clear"
-alias ai="source ~/.config/keys.sh"

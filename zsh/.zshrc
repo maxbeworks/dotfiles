@@ -50,8 +50,6 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
 
-source ~/.config/fzf-git.sh/fzf-git.sh
-
 # This makes the folder preview using eza's tree basic configuration
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
@@ -73,14 +71,3 @@ _fzf_comprun() {
 
 # »»————-　★　ZOXIDE ————-««
 eval "$(zoxide init zsh)"
-
-
-# »»————-　★　YAZI ————-««
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
