@@ -45,6 +45,7 @@
     },
     "audit": {
       "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "{file:./prompts/audit.md}",
       "tools": {
         "write": false,
         "edit": false,
@@ -54,17 +55,10 @@
     },
     "docs": {
       "model": "deepseek/deepseek-reasoner",
+      "prompt": "{file:./prompts/docs.md}",
       "tools": {
         "webfetch": false,
         "patch": false
-      }
-    },
-    "commenter": {
-      "model": "deepseek/deepseek-chat",
-      "tools": {
-        "bash": false,
-        "glob": false,
-        "webfetch": false
       }
     }
   }
