@@ -37,8 +37,9 @@
         "patch": false
       }
     },
-    "refactor": {
+    "maintain": {
       "model": "openai/gpt-4.1-mini",
+      "prompt": "{file:./prompts/maintain.md}",
       "tools": {
         "webfetch": false
       }
