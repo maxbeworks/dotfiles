@@ -45,7 +45,7 @@ return {
         end,
       }),
 
-      -- Remove copilot from sources - we only want it as ghost text
+      -- Do not add copilot or it will show in the pane so fuck it 
       sources = cmp.config.sources({
         { name = "lazydev" },
         { name = "nvim_lsp" },
