@@ -7,51 +7,53 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
   },
-  -- Not all LSP servers add brackets when completing a function.
-  -- To better deal with this, LazyVim adds a custom option to cmp,
-  -- that you can configure. For example:
-  --
-  -- ```lua
-  -- opts = {
-  --   auto_brackets = { "python" }
-  -- }
-  -- ```
   opts = function()
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
     local auto_select = true
+
     return {
-      auto_brackets = {}, -- configure any filetype to auto add brackets
+      auto_brackets = {},
       completion = {
         completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
       },
       preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None,
+
       mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-k>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ["<C-j>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<CR>"] = LazyVim.cmp.confirm({ select = auto_select }),
         ["<C-y>"] = LazyVim.cmp.confirm({ select = true }),
-        ["<S-CR>"] = LazyVim.cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ["<S-CR>"] = LazyVim.cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace }),
         ["<C-CR>"] = function(fallback)
           cmp.abort()
           fallback()
         end,
+        -- Tab only for Copilot acceptance, not cmp
         ["<tab>"] = function(fallback)
-          return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
+          -- Check if Copilot has a suggestion
+          local copilot_suggestion = require("copilot.suggestion")
+          if copilot_suggestion.is_visible() then
+            copilot_suggestion.accept()
+          else
+            fallback()
+          end
         end,
       }),
+
+      -- Remove copilot from sources - we only want it as ghost text
       sources = cmp.config.sources({
-        -- { name = "copilot" },
         { name = "lazydev" },
         { name = "nvim_lsp" },
         { name = "path" },
       }, {
         { name = "buffer" },
       }),
+
       formatting = {
         format = function(entry, item)
           local icons = LazyVim.config.icons.kinds
@@ -73,12 +75,12 @@ return {
           return item
         end,
       },
+
       experimental = {
-        -- only show ghost text when we show ai completions
-        ghost_text = vim.g.ai_cmp and {
-          hl_group = "CmpGhostText",
-        } or false,
+        -- Disable ghost text in cmp since we want it only for Copilot
+        ghost_text = false,
       },
+
       sorting = defaults.sorting,
     }
   end,
