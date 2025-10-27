@@ -32,6 +32,7 @@ automatically-unhide-macos-hidden-apps = false
 [key-mapping]
 preset = 'qwerty'
 
+
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
@@ -57,7 +58,7 @@ if.app-name-regex-substring = 'ghostty'
 run = 'move-node-to-workspace 2 --focus-follows-window'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'cursor'
+if.app-name-regex-substring = 'claude'
 run = 'move-node-to-workspace 3 --focus-follows-window'
 
 [[on-window-detected]]
@@ -66,22 +67,30 @@ run = 'move-node-to-workspace 4 --focus-follows-window'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'discord'
-run = 'move-node-to-workspace 4 --focus-follows-window'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'obsidian'
 run = 'move-node-to-workspace 5 --focus-follows-window'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'music'
+if.app-name-regex-substring = 'obsidian'
 run = 'move-node-to-workspace 6 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'music'
+run = 'move-node-to-workspace 7 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'cursor'
+run = 'move-node-to-workspace 8 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'beekeeper'
+run = 'move-node-to-workspace 9 --focus-follows-window'
 
 [gaps]
 inner.horizontal = 10
 inner.vertical = 10
 outer.left = 12
 outer.bottom = 10
-outer.top = 22
+outer.top = [{ monitor."built-in" = 22 }, { monitor."dell" = 58 }, 22]
 outer.right = 12
 
 [mode.main.binding]
@@ -110,17 +119,19 @@ alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
 alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
-alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+alt-shift-4 = 'move-node-to-workspace 5 --focus-follows-window'
 alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
 alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
-
-alt-tab = 'workspace-back-and-forth'
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-alt-shift-semicolon = 'mode service'
+alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
+alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
+alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
 alt-b = 'exec-and-forget open -a /Applications/Arc.app'
 alt-n = 'exec-and-forget open -a /Applications/Obsidian.app'
@@ -128,8 +139,13 @@ alt-t = 'exec-and-forget open -a /Applications/Ghostty.app'
 alt-m = 'exec-and-forget open -a /System/Applications/Music.app'
 alt-s = 'exec-and-forget open -a /Applications/Slack.app'
 alt-d = 'exec-and-forget open -a /Applications/Discord.app'
-alt-c = 'exec-and-forget open -a /Applications/Cursor.app'
+alt-a = 'exec-and-forget open -a /Applications/Claude.app'
+alt-q = 'exec-and-forget open -a /Applications/Cursor.app'
+alt-p = 'exec-and-forget open -a /Applications/Beekeeper Studio.app'
 
+alt-tab = 'workspace-back-and-forth'
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+alt-shift-semicolon = 'mode service'
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
