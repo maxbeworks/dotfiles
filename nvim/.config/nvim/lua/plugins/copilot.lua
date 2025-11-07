@@ -12,7 +12,7 @@ return {
   --       enabled = true,
   --       auto_trigger = true,
   --       hide_during_completion = true, -- Hide when cmp is active
-  --       debounce = 500, -- Higher debounce so it is not fucking annoying, default is 75
+  --       debounce = 75, -- Higher debounce so it is not fucking annoying, default is 75
   --       keymap = {
   --         accept = false, -- Handling this with nvim cmp
   --         accept_word = false,
