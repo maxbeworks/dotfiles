@@ -4,5 +4,6 @@ alias conf='vim ~/.zshrc'
 alias cat='bat'
 alias wut='tldr'
 alias lg="lazygit"
-alias ldo="lazydocker"
+alias ld="lazydocker"
+alias lq="lazysql"
 alias x="exit"
