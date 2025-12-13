@@ -55,7 +55,7 @@ run = 'move-node-to-workspace 1 --focus-follows-window'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'ghostty'
-run = 'move-node-to-workspace 2 --focus-follows-window'
+run = ['layout tiling', 'move-node-to-workspace 2 --focus-follows-window']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'claude'
@@ -66,15 +66,11 @@ if.app-name-regex-substring = 'slack'
 run = 'move-node-to-workspace 4 --focus-follows-window'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'discord'
-run = 'move-node-to-workspace 5 --focus-follows-window'
-
-[[on-window-detected]]
 if.app-name-regex-substring = 'obsidian'
 run = 'move-node-to-workspace 6 --focus-follows-window'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'music'
+if.app-name-regex-substring = 'lm studio'
 run = 'move-node-to-workspace 7 --focus-follows-window'
 
 [[on-window-detected]]
@@ -83,6 +79,10 @@ run = 'move-node-to-workspace 8 --focus-follows-window'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'beekeeper'
+run = 'move-node-to-workspace 9 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'gather'
 run = 'move-node-to-workspace 9 --focus-follows-window'
 
 [gaps]
@@ -138,10 +138,10 @@ alt-n = 'exec-and-forget open -a /Applications/Obsidian.app'
 alt-t = 'exec-and-forget open -a /Applications/Ghostty.app'
 alt-m = 'exec-and-forget open -a /System/Applications/Music.app'
 alt-s = 'exec-and-forget open -a /Applications/Slack.app'
-alt-d = 'exec-and-forget open -a /Applications/Discord.app'
 alt-a = 'exec-and-forget open -a /Applications/Claude.app'
 alt-q = 'exec-and-forget open -a /Applications/Cursor.app'
 alt-p = 'exec-and-forget open -a /Applications/Beekeeper Studio.app'
+alt-g = 'exec-and-forget open -a /Applications/GatherV2.app'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
