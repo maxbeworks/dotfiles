@@ -1,7 +1,6 @@
-alias v="nvim"
 alias vim='nvim'
 alias conf='vim ~/.zshrc'
-alias cat='bat'
+#alias cat='bat'
 alias wut='tldr'
 alias lg="lazygit"
 alias ld="lazydocker"

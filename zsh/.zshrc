@@ -71,3 +71,12 @@ _fzf_comprun() {
 
 # »»————-　★　ZOXIDE ————-««
 eval "$(zoxide init zsh)"
+export PATH=$PATH:$HOME/go/bin
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/maximebegaud/.lmstudio/bin"
+# End of LM Studio CLI section
+
