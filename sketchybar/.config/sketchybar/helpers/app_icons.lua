@@ -180,6 +180,8 @@ return {
 	["OmniFocus"] = ":omni_focus:",
 	["1Password"] = ":one_password:",
 	["ChatGPT"] = ":openai:",
+  ["GatherV2"] = ":gather:",
+  ["Beekeeper Studio"] = ":beekeeper_studio:",
 	["OpenVPN Connect"] = ":openvpn_connect:",
 	["Opera"] = ":opera:",
 	["OrcaSlicer"] = ":orcaslicer:",
