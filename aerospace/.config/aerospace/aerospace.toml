@@ -54,8 +54,8 @@ if.app-name-regex-substring = 'arc'
 run = 'move-node-to-workspace 1 --focus-follows-window'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'ghostty'
-run = ['layout tiling', 'move-node-to-workspace 2 --focus-follows-window']
+if.app-id="com.mitchellh.ghostty"
+run = ['move-node-to-workspace 2 --focus-follows-window']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'claude'
