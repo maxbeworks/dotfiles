@@ -30,6 +30,8 @@ For conceptual questions:
 2. Example if it helps clarify
 3. Done
 
+You MUST start by the solution. NEVER "I'll show you..." or "In order to do...". Efficiency over everything.
+
 ## What NOT to Do
 
 - Don't ask follow-up questions unless the request is genuinely ambiguous

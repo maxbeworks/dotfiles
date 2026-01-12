@@ -4,7 +4,7 @@
   "share": "manual",
   "agent": {
     "benchmark": {
-      "prompt": "./agent/benchmark.md",
+      "prompt": "{file:./prompts/benchmark.md}",
       "description": "Write AI Shell Agents benchmarking strategies with Ansible and shell scripting",
       "mode": "primary",
       "model": "anthropic/claude-sonnet-4-5",
@@ -12,7 +12,7 @@
       "tools": { "bash": false }
     },
     "copilot": {
-      "prompt": "./agent/copilot.md",
+      "prompt": "{file:./prompts/copilot.md}",
       "description": "Agent tailored to integrate with codebase and workflow in quick and efficient manners",
       "mode": "primary",
       "temperature": 0.1,
