@@ -1,9 +1,27 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-sonnet-4-5",
+  "model": "anthropic/claude-opus-4-5",
   "share": "manual",
+  "agent": {
+    "benchmark": {
+      "prompt": "./agent/benchmark.md",
+      "description": "Write AI Shell Agents benchmarking strategies with Ansible and shell scripting",
+      "mode": "primary",
+      "model": "anthropic/claude-sonnet-4-5",
+      "temperature": 0.4,
+      "tools": { "bash": false }
+    },
+    "copilot": {
+      "prompt": "./agent/copilot.md",
+      "description": "Agent tailored to integrate with codebase and workflow in quick and efficient manners",
+      "mode": "primary",
+      "temperature": 0.1,
+      "model": "anthropic/claude-haiku-4-5",
+      "tools": { "bash": false }
+    }
+  },
   "autoupdate": true,
   "default_agent": "plan",
   "mcp": {},
-  "enabled_providers": ["anthropic"],
+  "enabled_providers": ["anthropic"]
 }
