@@ -74,12 +74,8 @@ if.app-name-regex-substring = 'lm studio'
 run = 'move-node-to-workspace 7 --focus-follows-window'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'cursor'
-run = 'move-node-to-workspace 8 --focus-follows-window'
-
-[[on-window-detected]]
 if.app-name-regex-substring = 'beekeeper'
-run = 'move-node-to-workspace 9 --focus-follows-window'
+run = 'move-node-to-workspace 8 --focus-follows-window'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'gather'
@@ -136,11 +132,9 @@ alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 alt-b = 'exec-and-forget open -a /Applications/Arc.app'
 alt-n = 'exec-and-forget open -a /Applications/Obsidian.app'
 alt-t = 'exec-and-forget open -a /Applications/Ghostty.app'
-alt-m = 'exec-and-forget open -a /System/Applications/Music.app'
 alt-s = 'exec-and-forget open -a /Applications/Slack.app'
 alt-a = 'exec-and-forget open -a /Applications/Claude.app'
-alt-q = 'exec-and-forget open -a /Applications/Cursor.app'
-alt-p = 'exec-and-forget open -a /Applications/Beekeeper Studio.app'
+alt-d = 'exec-and-forget open -a /Applications/Beekeeper Studio.app'
 alt-g = 'exec-and-forget open -a /Applications/GatherV2.app'
 
 alt-tab = 'workspace-back-and-forth'

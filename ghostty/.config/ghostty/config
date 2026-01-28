@@ -1,4 +1,4 @@
-# theme = "catppuccin-mocha"
+theme = Catppuccin Mocha
 mouse-hide-while-typing = true
 #macos-option-as-alt = true
 macos-titlebar-style="transparent"
