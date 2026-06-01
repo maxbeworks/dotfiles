@@ -80,3 +80,11 @@ export PATH=$PATH:$HOME/go/bin
 export PATH="$PATH:/Users/maximebegaud/.lmstudio/bin"
 # End of LM Studio CLI section
 
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+. "$HOME/.moon/bin/env"
