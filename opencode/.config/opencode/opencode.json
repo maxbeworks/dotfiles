@@ -1,27 +1,43 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-opus-4-5",
   "share": "manual",
-  "agent": {
-    "benchmark": {
-      "prompt": "{file:./prompts/benchmark.md}",
-      "description": "Write AI Shell Agents benchmarking strategies with Ansible and shell scripting",
-      "mode": "primary",
-      "model": "anthropic/claude-sonnet-4-5",
-      "temperature": 0.4,
-      "tools": { "bash": false }
+  "model": "opencode-go/deepseek-v4-pro",
+  "permission": {
+    "bash": {
+      "wt *": "allow"
     },
+    "external_directory": {
+      "~/projects/**": "allow"
+    }
+  },
+  "agent": {
     "copilot": {
       "prompt": "{file:./prompts/copilot.md}",
       "description": "Agent tailored to integrate with codebase and workflow in quick and efficient manners",
       "mode": "primary",
-      "temperature": 0.1,
-      "model": "anthropic/claude-haiku-4-5",
-      "tools": { "bash": false }
+      "model": "opencode-go/deepseek-v4-flash",
+      "permission": {
+        "bash": "deny"
+      }
     }
   },
   "autoupdate": true,
-  "default_agent": "plan",
-  "mcp": {},
-  "enabled_providers": ["anthropic"]
+  "default_agent": "build",
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-1cf18f21-a0f8-46e6-8d74-dbfd508b4d44"
+      }
+    },
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app"
+    }
+  },
+  "plugin": [
+    "oh-my-openagent@latest"
+  ]
 }
